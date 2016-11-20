@@ -2,11 +2,9 @@ var mainState = {
   preload: function() {
     game.load.image('robot', 'assets/robot.png');
     game.load.image('block', 'assets/block.png');
-    game.load.image('background', 'assets/stars.jpg');
   },
 
   create: function() {
-    game.add.tileSprite(0, 0, 1000, 600, 'background');
     game.physics.startSystem(Phaser.Physics.ARCADE);
     this.robot = game.add.sprite(100, 245, 'robot');
     game.physics.arcade.enable(this.robot);
@@ -52,11 +50,11 @@ var mainState = {
 
     for (var i = 0; i < 8; i++) {
       if (i != hole && i != hole + 1) {
-        this.addOneBlock(700, i * 60 + 10);
-      }
+      this.addOneBlock(700, i * 60 + 10);
     }
+  }
 
-    this.score += 1;
+  this.score += 1;
     if (this.score - 2 > 0) {
       this.labelScore.text = this.score -2  ;
     }
@@ -66,4 +64,6 @@ var mainState = {
     game.state.start('main');
   }
 };
-var game = new Phaser.Game();
+var game = new Phaser.Game(800, 600, Phaser.AUTO, '', null, true);
+game.state.add('main', mainState);
+game.state.start('main');
