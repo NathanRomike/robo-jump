@@ -7,7 +7,6 @@ var mainState = {
 
   create: function() {
     game.add.tileSprite(0, 0, 1000, 600, 'background');
-
     game.physics.startSystem(Phaser.Physics.ARCADE);
     this.robot = game.add.sprite(100, 245, 'robot');
     game.physics.arcade.enable(this.robot);
@@ -67,6 +66,4 @@ var mainState = {
     game.state.start('main');
   }
 };
-var game = new Phaser.Game(700, 490);
-game.state.add('main', mainState);
-game.state.start('main');
+var game = new Phaser.Game();
