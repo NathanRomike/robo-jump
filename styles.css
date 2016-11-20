@@ -1,7 +1,18 @@
 html {
-  background: url(images/bg.jpg) no-repeat center center fixed;
+  background: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  width: 100% !important;
+  height: 100vh !important;
+  float: right
 }
